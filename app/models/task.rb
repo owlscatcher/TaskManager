@@ -3,7 +3,7 @@ class Task < ApplicationRecord
   belongs_to :assignee, class_name: 'User', optional: true
 
   validates :name, :description, :author, presence: true
-  validates :description, presence: true, length: { maximum: 500 }
+  validates :description, length: { maximum: 500 }
 
   state_machine initial: :new_task do
     event :begin_develop do
