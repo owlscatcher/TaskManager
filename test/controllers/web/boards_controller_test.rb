@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class Web::BoardsControllerTest < ActionController::TestCase
   setup do
@@ -6,8 +6,8 @@ class Web::BoardsControllerTest < ActionController::TestCase
     sign_in user
   end
 
-  test "should get show" do
-    get :show 
+  test 'should get show' do
+    get :show
     assert_response :success
   end
 end
