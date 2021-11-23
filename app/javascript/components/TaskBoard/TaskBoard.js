@@ -5,6 +5,9 @@ import { propOr } from 'ramda';
 import Task from 'components/Task';
 import TasksRepository from 'repositories/TasksRepository';
 import ColumnHeader from '../ColumnHeader';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import useStyles from './useStyles';
 
 const STATES = [
   { key: 'new_task', value: 'New' },
@@ -26,6 +29,7 @@ const initialBoard = {
 };
 
 const TaskBoard = () => {
+  const styles = useStyles();
   const [board, setBoard] = useState(initialBoard);
   const [boardCards, setBoardCards] = useState([]);
   useEffect(() => loadBoard(), []);
@@ -97,14 +101,20 @@ const TaskBoard = () => {
   };
 
   return (
-    <KanbanBoard
-      disableColumnDrag
-      onCardDragEnd={handleCardDragEnd}
-      renderCard={(card) => <Task task={card} />}
-      renderColumnHeader={(column) => <ColumnHeader column={column} onLoadMore={loadColumnMore} />}
-    >
-      {board}
-    </KanbanBoard>
+    <div>
+      <KanbanBoard
+        disableColumnDrag
+        onCardDragEnd={handleCardDragEnd}
+        renderCard={(card) => <Task task={card} />}
+        renderColumnHeader={(column) => <ColumnHeader column={column} onLoadMore={loadColumnMore} />}
+      >
+        {board}
+      </KanbanBoard>
+
+      <Fab className={styles.addButton} color="primary" aria-label="add">
+        <AddIcon />
+      </Fab>
+    </div>
   );
 };
 
