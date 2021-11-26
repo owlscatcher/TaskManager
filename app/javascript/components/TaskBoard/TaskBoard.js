@@ -137,8 +137,8 @@ const TaskBoard = () => {
 
       <Fab onClick={handleOpenAddPopup} className={styles.addButton} color="primary" aria-label="add">
         <AddIcon />
-        {mode === MODES.ADD && <AddPopup onCreateCard={handleTaskCreate} onClose={handleClose} />}
       </Fab>
+      {mode === MODES.ADD && <AddPopup onCreateCard={handleTaskCreate} onClose={handleClose} />}
     </div>
   );
 };
