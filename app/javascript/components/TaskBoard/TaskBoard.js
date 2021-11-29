@@ -4,13 +4,13 @@ import { propOr } from 'ramda';
 
 import Task from 'components/Task';
 import TasksRepository from 'repositories/TasksRepository';
-import ColumnHeader from '../ColumnHeader';
+import ColumnHeader from 'components/ColumnHeader';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import AddPopup from '../AddPopup';
-import TaskForm from '../../forms/TaskForm';
+import AddPopup from 'components/AddPopup';
+import TaskForm from 'forms/TaskForm';
 import useStyles from './useStyles';
-import EditPopup from '../EditPopup';
+import EditPopup from 'components/EditPopup';
 
 const STATES = [
   { key: 'new_task', value: 'New' },
