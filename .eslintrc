@@ -60,6 +60,7 @@
         ]
       }
     ],
+    "no-use-before-define": ["error", { "variables": false }],
     "no-debugger": ["warn"],
     "react/destructuring-assignment": 0,
     "react/static-property-placement": 0
